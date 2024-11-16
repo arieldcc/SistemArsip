@@ -1,0 +1,47 @@
+php artisan migrate:fresh -> migrasi database
+php artisan make:model nama_model -> membuat model
+php artisan make:controller nama_controller -> membuat controller
+php artisan storage:link -> menghubungkan ke media penyimpanan
+chmod -R 775 storage -> memberikan akses media penyimpanan
+composer require maatwebsite/excel -> library laporan
+php artisan make:export DisposisiExport --model=M_SuratMasuk -> Buat Export Class untuk Data Disposisi
+php artisan serve --host 0.0.0.0 -> jalankan project
+
+buat auth:
+Setup Autentikasi Bawaan Laravel
+    - Atur Autentikasi
+        composer require laravel/ui
+        php artisan ui:auth
+    - menghasilkan tampilan Autentikasi
+        php artisan ui bootstrap --auth
+        npm install && npm run dev
+
+
+Tambahkan Kolom level pada Tabel users
+    php artisan make:migration add_level_to_users_table --table=users
+isi:
+// migration file
+public function up()
+{
+    Schema::table('users', function (Blueprint $table) {
+        $table->string('level')->default('pimpinan'); // default level to 'pimpinan'
+    });
+}
+
+
+jalankan migrasi:
+    php artisan migrate
+
+Menambahkan Middleware untuk Mengamankan Rute Berdasarkan Level Pengguna
+    php artisan make:middleware CheckUserLevel
+
+membuat seeder data awal user
+    php artisan make:seeder UserSeeder
+
+jalankan UserSeeder
+    php artisan db:seed --class=UserSeeder
+
+    php artisan db:seed
+
+
+

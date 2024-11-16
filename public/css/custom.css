@@ -1,0 +1,31 @@
+/* public/css/custom.css */
+.carousel-item img {
+    height: 250px;
+    object-fit: cover; /* Crop gambar agar sesuai tinggi 100px */
+}
+
+/* public/css/custom.css */
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6); /* Background hitam semi-transparan */
+    padding: 10px;
+    border-radius: 5px; /* Memberikan sedikit rounded pada background */
+}
+
+.carousel-caption h5,
+.carousel-caption p {
+    color: #ffffff; /* Warna teks putih untuk kontras */
+}
+
+/* Gaya tambahan untuk tombol dengan ikon */
+.btn-icon {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+.btn-icon i {
+    margin-right: 5px;
+}
