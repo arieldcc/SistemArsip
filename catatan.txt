@@ -1,3 +1,4 @@
+php artisan make:migration create_nama_tabel_table -> membuat tabel migrasi
 php artisan migrate:fresh -> migrasi database
 php artisan make:model nama_model -> membuat model
 php artisan make:controller nama_controller -> membuat controller
@@ -6,6 +7,8 @@ chmod -R 775 storage -> memberikan akses media penyimpanan
 composer require maatwebsite/excel -> library laporan
 php artisan make:export DisposisiExport --model=M_SuratMasuk -> Buat Export Class untuk Data Disposisi
 php artisan serve --host 0.0.0.0 -> jalankan project
+
+composer require ramsey/uuid -> gunakan uuid
 
 buat auth:
 Setup Autentikasi Bawaan Laravel
@@ -43,5 +46,6 @@ jalankan UserSeeder
 
     php artisan db:seed
 
+composer dump-autoload -> autoload untuk fungsi/variabel global
 
 

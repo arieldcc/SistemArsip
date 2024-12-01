@@ -180,9 +180,23 @@
                 $('#pdfViewer1').hide();
             }
 
+            // Show the download button for the user to download the file
+            $('#downloadBtn').attr('data-file-url', fileUrl).show();
+
             // Tampilkan modal
             const fileModal = new bootstrap.Modal(document.getElementById('fileModal'));
             fileModal.show();
+        }
+
+        // Function to handle file download
+        function downloadFile() {
+            const fileUrl = $('#downloadBtn').attr('data-file-url');
+
+            // Create an invisible anchor tag to trigger download
+            const a = document.createElement('a');
+            a.href = fileUrl;
+            a.download = fileUrl.split('/').pop(); // Extract filename from URL
+            a.click(); // Trigger the download
         }
     </script>
 @endsection

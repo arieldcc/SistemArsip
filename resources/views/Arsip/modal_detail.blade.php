@@ -41,6 +41,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                <!-- Download Button -->
+                <button type="button" class="btn btn-primary" id="downloadBtn" style="display: none;" onclick="downloadFile()">Download</button>
             </div>
         </div>
     </div>
